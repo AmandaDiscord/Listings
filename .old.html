@@ -1,0 +1,211 @@
+<style>
+	html {
+		height: 100%;
+	}
+	body {
+		background: url("https://amanda.discord-bots.ga/images/back-tg.svg?d=dbl&c=1");
+		background-size: cover;
+		color: black;
+		min-height: 100%;
+	}
+	.pinkbutton {
+		padding: 16px 32px;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		transition: 0.2s ease-out;
+		background-color: white;
+		color: black;
+		border: 2px solid #de56a9;
+		cursor: pointer;
+		line-height: 1;
+	}
+	.pinkbutton:hover {
+		background-color: #de56a9;
+		color: white;
+	}
+	/*
+	#cdm-zone-01 {
+		height: 10px !important;
+		min-height: 10px;
+	}
+	#details {
+		display: none;
+	}
+	#details + * {
+		display: none;
+	}*/
+	#fd {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	#rd {
+		display: flex;
+		flex-direction: column;
+		margin: 0px 10px 10%;
+	}
+	#rd > div:first-child {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 6px;
+	}
+	.rd-avatar-container {
+		display: flex;
+		flex-direction: column-reverse;
+		margin-bottom: 10px;
+	}
+	.rd-avatar {
+		width: 256px;
+		height: 256px;
+		margin: auto;
+	}
+	.rd-profile-details {
+		flex: 1;
+		min-width: 300px;
+	}
+	.atag {
+		color: black;
+		transition: 0.2s ease-out;
+	}
+	.atag:hover {
+		background-color: #de56a9;
+	}
+	.atag::after {
+		transition: 0.2s ease-out;
+	}
+	.atag:hover::after {
+		border-left-color: #de56a9;
+	}
+	.status {
+		margin: 0 !important;
+		display: inline-flex;
+	}
+	.rd-description {
+		margin-bottom: 10px;
+	}
+	.rd-wide {
+		margin-top: 10px;
+	}
+	.longdescription {
+		padding: 8px 0px;
+	}
+	.longdescription .content {
+		color: #222;
+		padding: 12px;
+		box-shadow: none;
+		border-radius: 0px;
+		border: 2px solid #de56a9;
+		background: white;
+		line-height: 1.3;
+	}
+	.container {
+		margin: 0;
+	}
+	.longdescription .content.rd-owners {
+		display: flex;
+		flex-wrap: wrap !important;
+		flex-direction: row !important;
+	}
+	.rd-owners b {
+		display: inline-block;
+	}
+	.rd-owners a {
+		display: inline-flex;
+		align-items: center;
+		color: inherit;
+		font-size: 18px;
+		padding: 2px;
+		margin: 4px;
+		border-radius: 16px;
+		background-color: #ddd;
+	}
+	.rd-owners span {
+		margin-right: 8px;
+	}
+	.rd-owners i {
+		font-size: 16px;
+		color: #666;
+	}
+	.rd-owners img {
+		width: 32px;
+		border-radius: 50%;
+		margin-right: 6px;
+	}
+	@media (max-width: 590px) {
+		.rd-avatar-container {
+			width: 100%;
+		}
+		.rd-profile-details {
+			text-align: center;
+		}
+	}
+</style>
+<script>
+	if (document.readyState == "loading") {
+			document.addEventListener("DOMContentLoaded", rebuildPage);
+	} else {
+			rebuildPage();
+	}
+	
+	function rebuildPage() {
+	const q = m => document.querySelector(m);
+	let fd = document.createElement("div");
+	let rd = document.createElement("div");
+	fd.id = "fd";
+	fd.appendChild(rd);
+	rd.id = "rd";
+	rd.innerHTML = `
+			<div>
+					<span class="rd-avatar-container">${"avatar" && ""}</span>
+					<span class="rd-profile-details">
+							<div>
+									<span class="rd-name">${"name" && ""}</span>
+							</div>
+							${"online indicator" && ""}
+							<div class="rd-description"></div>
+							<div>
+									<a class="pinkbutton" href="https://discord-bots.ga/amanda">Invite</a>
+									<a class="pinkbutton" href="https://amandabot.ga/">Website</a>
+									<a class="pinkbutton" href="https://discord.gg/zhthQjH">Support Server</a>
+									<br>
+									<a class="pinkbutton" href="/bot/405208699313848330/vote" id="rd-vote">Vote</a>
+									<a class="pinkbutton" href="/bot/405208699313848330/report">Report</a>
+							</div>
+					</span>
+			</div>
+	`;
+	let rdd = rd.children[0];
+	let avatar = q(".bot-img img");
+	avatar.classList.add("rd-avatar");
+	rdd.children[0].appendChild(avatar);
+	let status = q("#bot-details-page .status");
+	if (status.classList.contains("purple")) {
+			status.classList.remove("purple");
+			status.classList.add("green");
+	}
+	rdd.children[1].insertBefore(status, rdd.children[1].children[1]);
+	rdd.children[1].children[0].children[0].appendChild(q("#bot-details-page .bot-name"));
+	rdd.children[1].children[2].innerHTML = q(".bot-description").innerHTML;
+	rdd.children[1].appendChild(q("#tags"));
+	let longDescription = [...document.querySelectorAll(".container.is-widescreen")].slice(-2)[0];
+	let stats = longDescription.cloneNode(true);
+	stats.children[0].children[0].innerHTML =
+		`<span>Prefix: </span><br>`+
+		`<span>Servers: ${q(".serversshards .votebutton").innerText.match(/\d+/)[0]}</span><br>`+
+		`<span>Votes this month: ${q("#points").innerText}</span>`;
+	stats.children[0].children[0].children[0].appendChild(q("#prefix"));
+	rd.appendChild(stats);
+	rd.appendChild(longDescription);
+	let owners = longDescription.cloneNode(true);
+	owners.children[0].children[0].innerHTML = "<div>Created by:</div>";
+	owners.children[0].children[0].classList.add("rd-owners");
+	let createdby = q("#createdby");
+	if (createdby) {
+		[...createdby.children].forEach(c => owners.children[0].children[0].appendChild(c));
+		rd.appendChild(owners);
+	}
+	q("#details").parentElement.insertBefore(fd, q("#details"));
+	}
+</script>
