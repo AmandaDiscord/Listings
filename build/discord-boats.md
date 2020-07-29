@@ -72,7 +72,7 @@ code {
 .yes-checked {
   color: gold; }
 
-.img {
+img {
   width: 100%;
   heigh: auto; }
 
