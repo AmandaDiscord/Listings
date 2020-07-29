@@ -1,6 +1,6 @@
 <!-- https://discord.boats/bot/405208699313848330 -->
 
-![Amanda's avatar, a red-haired catgirl, in front of an out-of-focus background of code.](https://cdn.discordapp.com/attachments/608456955660468224/636334218510729237/banner_no_ads.png)
+<img src="https://cdn.discordapp.com/attachments/608456955660468224/636334218510729237/banner_no_ads.png" alt="Amanda's avatar, a red-haired catgirl, in front of an out-of-focus background of code." class="autoimg">
 
 # A qt music bot made for qts
 
@@ -17,7 +17,7 @@ Her music player is designed to be functional and pleasing to look at. She integ
 
 She has a website that lets you see and manage what songs are playing in real time. It's been designed from the ground up for performance and security: real time events and element generation ensure that it runs even faster than Rythm.
 
-![A screenshot of a website displaying a list of songs and playback controls.](https://cdn.discordapp.com/attachments/608456955660468224/608457010102665226/525fac.png)
+<img src="https://cdn.discordapp.com/attachments/608456955660468224/608457010102665226/525fac.png" alt="A screenshot of a website displaying a list of songs and playback controls." class="autoimg">
 
 Amanda is updated regularly with lots of ❤️ to deliver upon what is promised which is quality and stability.
 
@@ -72,9 +72,9 @@ code {
 .yes-checked {
   color: gold; }
 
-img {
+.autoimg {
   width: 100%;
-  heigh: auto; }
+  height: auto; }
 
 .card {
   color: #222;
