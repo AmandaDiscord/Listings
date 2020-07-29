@@ -36,6 +36,9 @@ Here's some commands we've picked out for you:
 |&slot 100|Potential for untold riches|
 
 <style>
+body {
+  background: #000; }
+
 .bot__header {
   background: url("https://cdn.discordapp.com/attachments/608456955660468224/738010277714460682/code_blurred.png");
   background-size: cover;
@@ -44,7 +47,8 @@ Here's some commands we've picked out for you:
   -webkit-animation: none; }
 
 .bot__body {
-  background: linear-gradient(135deg, #fead7b, #c76d7f, #462371); }
+  background: linear-gradient(135deg, #fead7b, #c76d7f, #462371);
+  padding-bottom: 20px; }
 
 .button, .tag {
   padding: 10px 20px;

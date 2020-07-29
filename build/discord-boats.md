@@ -72,6 +72,10 @@ code {
 .yes-checked {
   color: gold; }
 
+.img {
+  width: 100%;
+  heigh: auto; }
+
 .card {
   color: #222;
   padding: 12px;
