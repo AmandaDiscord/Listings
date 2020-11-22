@@ -9,11 +9,12 @@ Amanda can:
 - Play music
 - Allow you to gamble your life away
 - Interact with your fellow members
-- Show you cat pictures. Let there be cats! ༼ つ ◕ヮ◕ ༽つ
+- Show you cat pictures. Let there be cats!
+༼ つ ◕ヮ◕ ༽つ
 
 # A premium feel
 
-Her music player is designed to be functional and pleasing to look at. She integrates with several services to make your time worthwhile by playing music from YouTube, SoundCloud, Spotify and a custom music live streaming service, [Frisky Radio.](https://www.friskyradio.com/)
+Her music player is designed to be functional and pleasing to look at. She integrates with several services to make your time worthwhile by playing music from YouTube, SoundCloud, Spotify, [Frisky Radio](https://www.friskyradio.com/), [listen.moe](https://listen.moe) and your own audio files!
 
 She has a website that lets you see and manage what songs are playing in real time. It's been designed from the ground up for performance and security: real time events and element generation ensure that it runs even faster than Rythm.
 
@@ -50,7 +51,7 @@ code {
   border-radius: 4px; }
 
 .background {
-  background: linear-gradient(135deg, #fead7b, #c76d7f, #462371); }
+  background: linear-gradient(135deg, #fead7b, #c76d7f, #462371) !important; }
 
 .btn-dark {
   padding: 10px 20px;
